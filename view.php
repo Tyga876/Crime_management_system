@@ -73,9 +73,32 @@
     </div>
 <br/>
         <a href="viewrecords.php" class="btn btn-info">Back to List</a>
-        <a href="edit.php?id=<?php echo $result['criminal_tb_id'] ?>" class="btn btn-warning">Edit</a>
-        <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $result['criminal_tb_id'] ?>" class="btn btn-danger">Delete</a>
-    <?php } ?>
+     
+        <?php   if($_SESSION ['username']=='user'){ ?>
+   
+   
+  
+   <a href="edit.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-secondary btn-lg disabled">Edit</a>
+   <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-secondary btn-lg disabled">Delete </a>
+   </td>
+   <?php }?>
+   
+
+   <?php   if($_SESSION ['username']=='admin'){ ?>
+
+       
+       
+       <a href="edit.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-warning">Edit</a>            
+       <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-danger">Delete </a>
+   
+   <?php }?>
+
+
+  
+
+<?php }?>
+
+
 <br>
 <br>
 <br>

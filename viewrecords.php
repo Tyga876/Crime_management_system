@@ -12,7 +12,7 @@
 
     <table class="table table-striped table-dark">
         <tr>
-            <th>#</th>
+            <th>Ref#</th>
             <th>First Name</th>
             <th>Middle Name</th>
             <th>Last Name</th>
@@ -27,6 +27,7 @@
             <th>Email Address</th>
             <th>Telephone Number</th>
             <th>Police Officer Regulation Number</th>
+            <th>Action</th>
            
         </tr>
         <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) { ?>
@@ -47,11 +48,27 @@
                 <td><?php echo $r['phone'] ?></td>
                 <td><?php echo $r['regNo'] ?></td>
                
+                <?php   if($_SESSION ['username']=='user'){ ?>
+   
                 <td>
-                    <a href="view.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-primary">View</a>
-                    <a href="edit.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-warning">Edit</a>
-                    <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-danger">Delete</a>
+                <a href="view.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-primary">View</a>
+                <a href="edit.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-secondary btn-lg disabled">Edit</a>
+                <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-secondary btn-lg disabled">Delete </a>
                 </td>
+                <?php }?>
+                
+
+                <?php   if($_SESSION ['username']=='admin'){ ?>
+   
+                    <td>
+                    <a href="view.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-primary">View</a>
+                    <a href="edit.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-warning">Edit</a>            
+                    <a onclick="return confirm('Are you sure you want to delete this record?');" href="delete.php?id=<?php echo $r['criminal_tb_id'] ?>" class="btn btn-danger">Delete </a>
+                </td>
+                <?php }?>
+   
+
+               
            </tr> 
         <?php }?>
     </table>
