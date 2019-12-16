@@ -36,7 +36,7 @@
         $specialtyName = $crud->getIdTypeById($idType);
        
         if($isSuccess){
-            SendEmail::SendMail($email,'Welcome to IT conference 2019','You were registered successfully for this year\'s IT conference');
+            SendEmail::SendMail($email,'Welcome to crime management system','You have successfully registered a criminal or suspect');
             include 'includes/successmessage.php';
         }
         else{

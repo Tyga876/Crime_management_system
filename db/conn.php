@@ -1,23 +1,24 @@
 <?php 
     // Development Connection
     
+    /*
      $host = '127.0.0.1';
      $db = 'criminals_db';
      $user = 'root';
      $pass = '';     
      $charset = 'utf8mb4';
  
-  
+  */
  
 
     //Remote Database connection
 
-  /*  $host = 'remotemysql.com';
-    $db = 'AeCksE28dh';
-    $user = 'AeCksE28dh';
-    $pass = 'P04cRNiVZk';     
+    $host = 'remotemysql.com';
+    $db = 'c8sC7CgURy';
+    $user = 'c8sC7CgURy';
+    $pass = 'BR8i4aEDaj';     
     $charset = 'utf8mb4';
-  */
+  
 
     
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
